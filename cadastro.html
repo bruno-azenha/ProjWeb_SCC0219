@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang = "pt-br">
+<head>
+	<meta charset = "UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="css/signup.css">
+	<title>Cadastre-se</title>
+</head>
+
+<body class = "cover">
+	<div>
+		
+		<form>
+			<h1>Cadastro </h1>
+			<div class = "field">
+			<label>Nome Completo: </label>
+			<input id = "name" type = "text" required/>
+		</div>
+		<div class = "field">
+			<label>CPF: </label>
+			<input id = "cpf" type="number" required/>
+		</div>
+			<div class = "field">
+			<label>Data de Nascimento</label>
+			<input id = "datanasc" type = "date" required />
+			</div>
+			<div class = "field">
+			<label>Sexo: </label>
+			<input name= "sexo" type = "radio" value = "Masc" required/>Masc
+			<input name= "sexo" type = "radio" value = "Fem" required/>Fem
+			</div>
+			<div class = "field">
+			<label>Estado Civil: </label>
+			<input name= "estadoCivil" type = "radio" value = "Solteiro" required/>Solteiro
+			<input name= "estadoCivil" type = "radio" value = "Casado" required/>Casado
+			<input name= "estadoCivil" type = "radio" value = "Outros" required/>Outros
+			</div>
+			<div class = "field">
+			<label>Cidade: </label><input type = "text"/>
+			<label>Estado: </label><select>
+			<option>---</option>
+			<option>SP</option>
+		</select>
+		</div>
+			<div class = "field">
+			<label>CEP: </label>
+			<input type = "text"/>
+			</div>
+			<div class = "field">
+			<label>E-mail: </label>
+			<input type = "text"/>
+			</div>
+			<div class = "field">
+			<label>Senha: </label>
+			<input type = "password"/>
+			</div>
+			<div class = "field">
+			<label>Confirmar a Senha: </label>
+			<input type = "password"/>
+		</div>
+			<input class = "button" type="submit" value ="Cadastrar"/>
+		</form>		
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang = "pt-br">
+<head>
+	<meta charset = "UTF-8"/>
+	<link rel="stylesheet" type="text/css" href="css/contact.css">
+	<title>Contato</title>
+</head>
+
+<body class= "cover">
+	<div  >
+
+		
+		<form action="" method="GET" id = "	contato">
+		<h1>Contate-nos</h1>
+		<p> Informações pessoais:</p>
+		<div class ="field" ><label>Nome:</label>
+		<input id= "nome" type ="text" required  /></div>
+		<div class ="field"><label>E-mail:</label>
+		<input type ="e-mail" required />
+		</div>
+		<label class ="field">Celular:</label>
+		<input type ="text" placeholder = "(XX)XXXXX-XX-XX" />
+		<p>Como nos conheceu?</p>
+		<div class ="field">
+		<input name = "conheceu" type= "checkbox" value = "jornal"/><label>Jornais</label>
+		<input name = "conheceu" type= "checkbox" value = "indicacao" /> <label>Indicação</label>
+		<input name = "conheceu" type= "checkbox" value = "rede social" />
+		<label>Rede Sociais</label>
+		</div>
+		<div class ="field">
+		<input name = "conheceu" type= "checkbox" value = "google" /> <label>Google</label>
+		<input name = "conheceu" type= "checkbox" value = "revista" /> <label>Revista</label>
+		<input name = "conheceu" type= "checkbox" /><label>Outros</label><br>
+		</div>
+
+		<label>Mensagem:</label><br>
+		<textarea name = "message" rows= "0" cols = "0" required></textarea>
+
+		<input class = "button" type="submit" value ="Enviar menssagem" onclick="login()"/>
+		</form>
+		
+	</div>
+</body>
+</html>

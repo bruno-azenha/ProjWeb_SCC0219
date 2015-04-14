@@ -1,0 +1,88 @@
+
+
+body{
+    overflow-x: hidden; 
+}
+
+.cover{
+    background-image: url(../imgs/bridgeport.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 20px;
+    min-width: 400px;
+    
+}
+.grid {
+    margin: 0 auto;
+    max-width: 1920px;
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+
+}
+
+.full-bar {
+  margin: 0 -9999rem;
+  padding: 0.25rem 9999rem;
+  background: rgba(0, 0, 0, 0.9);
+  display: inline-block;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+h1{
+    text-align: left;
+    color: white;
+    font-size: 38px;
+    font-family: 'Lato', sans-serif;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+label{
+    text-align: left;
+    color: white;
+}
+
+
+.col-6 {
+    width: 20%;
+    float: left;
+    padding: 10px;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+    text-align: right;
+    margin-left: 0;
+
+}
+
+.col-6:hover {
+   background: #ED213D;
+}
+
+.msg {
+        float: left;
+        border: 1px solid #ddd;
+        padding: 30px 40px 20px 40px;
+        margin: 5% 0 0 0;
+        width: 40%;
+        background: rgba(237,33,61,0.9);
+        box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+        text-align: justify;
+}
+
+
