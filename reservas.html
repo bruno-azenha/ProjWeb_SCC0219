@@ -4,6 +4,8 @@
 	<meta charset = "UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="css/reservas.css">
 	<script type="text/javascript" src="js/validation.js"></script>
+	<script type="text/javascript" src ="js/jquery-1.11.2.js"></script>
+	<script type="text/javascript" src ="js/reserva.js"></script>
 	<title>Pagina de reservas</title>
 </head>
 
@@ -12,28 +14,28 @@
 		<h1> Bridgeport Grand Hotel</h1>
 			</div>
 	<div>
-		
+		S
 		<form action="" method="GET" id = "reservation">
 			<h2>Faça sua reserva<h2>
 			<div class = "field">
 		<label>Data de chegada</label>
-		<input id= "iDate" type ="date" required />
+		<input  name = "iDate" id= "iDate" type ="date" required  />
 		</div>
 		<div class = "field">
 		<label>Data de saída</label>
-		<input id= "oDate" type ="date" required />
+		<input name = "oDate" id= "oDate" type ="date" required />
 		</div>
 		<div class = "field">
 		<label>Número de Adultos</label>
-		<input id= "adults" type ="number" required />
+		<input name = "adult" id= "adult" type ="number" value = "1" min="1" max="4" required />
 		</div>
 		<div class = "field">
 		<label>Número de crianças menores de três anos</label>
-		<input id= "bebe" type ="number" required />
+		<input name = "baby" id= "baby" type ="number" value = "0" min ="0" max ="3" required />
 		</div>
 		<div class = "field">
 		<label>Número de crianças menores de treze anos</label>
-		<input id= "child" type ="number" required placeholder = "acima de 3 anos " />
+		<input name = "child" id= "child" type ="number" value = "0" min ="0" max ="4" required  />
 		</div>
 		<input type="submit" value ="Efetuar reserva"/>
 		
