@@ -3,8 +3,8 @@
 <head>
 	<meta charset = "UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
-	<!--<script src="jquery-1.11.2.js"></script>-->
-	<script type="text/javascript" src = "js/login.js"></script>
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src = "js/validation.js"></script>
 	<title>Login page</title>
 </head>
 
@@ -17,14 +17,14 @@
 				<form  action="" method="GET" id = "login">
 						<div>
 						<label>Email:</label>
-						<input id= "email" type ="email" required placeholder = "you@yourdomain.com" />
+						<input id= "email" type ="email" required placeholder = "voce@seudominio.com" />
 						</div>
 						<div>
 						<label>Senha:</label>
 						<input type ="password" required placeholder = "Senha" />
 					</div>
 					<div>
-						<input type="Submit" value ="login" onclick="login()"/>
+						<input type="submit" id="botaoLogin" value ="login"/>
 					</div>
 				</form><br>
 				<div class= "col-6"><a href="cadastro.html">Cadastre-se</a></div>
