@@ -3,6 +3,7 @@ Instituto de Ciências Matemáticas e de Computação
 São Carlos, 14 de Abril de 2015
 
 Autores: Bruno Azenha Gonçalves - 7143444
+	 Clayton de Oliveira - 7161591
 
 Essa é a implementação do primeiro trabalho da disciplina 
 Introdução ao Desenvolvimento Web,ministrada pelo professor Rudinei Goulart
