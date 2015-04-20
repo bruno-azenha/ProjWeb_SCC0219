@@ -11,6 +11,18 @@ $(document).ready(function(){
 			
 
 	})
+	$("#email").focusout(function(event){
+		var e = $("#email");
+		var email = e.val();
+		
+		if(validaEmail(e)){
+			removeError(e);
+		}
+		else
+			displayError(e,"invalid e-mail");
+			
+
+	})
 
 	$("#submit").click(function(event){
 		c = $("#conheceu");
@@ -25,7 +37,7 @@ $(document).ready(function(){
     }
     else {
     	removeError(c);
-    	if(!validateName(n.val()) || !validateEmail(e.val()))
+    	if(!validateName(n.val()) || !validaEmail(e.val()))
 			return false;
 
 		}

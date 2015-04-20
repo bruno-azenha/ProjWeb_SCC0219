@@ -8,16 +8,14 @@ $(document).ready(function() {
 		else {
 			removeError(email);
 		}
-	});
+	})
 
 	$("#submit").click(function(event){
 		var email = $("#email");
-		if (validaEmail(email) == false) {
-			displayError(email,"invalid e-mail");
+		if (!validaEmail(email)) {
+			
 			return false;
 		}
-		else {
-			removeError(email);
-		}
+		
 	});		
-});
+})
