@@ -8,6 +8,8 @@ function validaEmail(email){
 	return true;
 }
 
+//simple method to check if date1 is greater than date2
+// uses two Date objects to do the comparison
 function validateDate(date1,date2){
 
 	if (date1 > date2){
@@ -16,6 +18,7 @@ function validateDate(date1,date2){
 	else return false;
 }
 
+//validate name as the specified rules
 function validateName(name){
 	var count = 0;
 	count = name.length;
@@ -29,6 +32,7 @@ function validateName(name){
   	return false;
 }
 
+//validate full name as the specified rules
 function validateFullName(fName){
 
 	var name= fName.split(" ");
@@ -41,6 +45,7 @@ function validateFullName(fName){
 	return true;
 }
 
+//validate CPF as seen in the reference below
 //reference: http://www.receita.fazenda.gov.br/aplicacoes/atcta/cpf/funcoes.js
 
 function validateCPF(cpf) { 
@@ -74,6 +79,8 @@ function validateCPF(cpf) {
 	 return true; 
 }
 
+//display error receives a reference and a string message
+//aplies the error class into the given id
 function displayError(id,msg){
 	$("p").remove(".errorMsg");
 	id.removeClass("accept");
@@ -82,6 +89,7 @@ function displayError(id,msg){
 	id.addClass("error");
 }
 
+//remove the error class above
 function removeError(id){
 	id.removeClass("error");
 	id.addClass("accept");

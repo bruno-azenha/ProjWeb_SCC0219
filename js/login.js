@@ -1,12 +1,23 @@
 $(document).ready(function() {
 	
-	$("#botaoLogin").click(function(){
+	$("#email").focusout(function(event){
 		var email = $("#email");
 		if (validaEmail(email) == false) {
-			alert("O email é inválido.");
+			displayError(email,"invalid e-mail");
 		}
 		else {
-			alert("O email é válido!")
+			removeError(email);
+		}
+	});
+
+	$("#submit").click(function(event){
+		var email = $("#email");
+		if (validaEmail(email) == false) {
+			displayError(email,"invalid e-mail");
+			return false;
+		}
+		else {
+			removeError(email);
 		}
 	});		
 });

@@ -2,13 +2,14 @@
 	background-image : url(../imgs/nok.png);
     background-repeat : no-repeat;
     background-position: top right;
-   	background-size : contain;	
+    background-size : contain;	
 
 }
 .errorMsg{
 	font-size: 12px;
 	color: black;
 	background-color: white;
+  display: flex;
 }
 
 .accept{

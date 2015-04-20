@@ -2,21 +2,17 @@ $(document).ready(function() {
 	
 	$("#iDate").change(function() {
 		var date = new Date($(this).val());
-		date.setDate( date.getDate() + 3);
-		alert (date);
-		$("#oDate").attr("min", $(this).val());
+		var minOutDate;
+		// alert (date);
+		if(date.getMonth()<10){
+ 		minOutDate = date.getFullYear()+"-0"+(date.getMonth()+1)+"-"+(date.getDate()+3);	
+ 	}
+ 		else
+ 		minOutDate = date.getFullYear()+"-"+(date.getMonth()+1)+"-"+(date.getDate()+3);
+
+		$("#oDate").attr("min", minOutDate);
 		$("#oDate").removeAttr("disabled");
 	});
-	
-	$("#botaoReserva").click(function(){
-		var email = $("#email");
-		if (validaEmail(email) == false) {
-			alert("O email é inválido.");
-		}
-		else {
-			alert("O email é válido!")
-		}
-	});		
 });
 
 window.onload = function(){
