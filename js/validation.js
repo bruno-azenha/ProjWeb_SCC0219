@@ -1,7 +1,7 @@
 // Função que verifica se um email é válido de 
 // acordo com as especificações do trabalho.
 function validaEmail(email){ 
-	var pattern = new RegExp("^[a-z][a-z0-9.\_]+\@[a-z0-9]+\.[a-z]{2,4}$");
+	var pattern = new RegExp("^[a-z]([a-z0-9\-\_]*.?[a-z0-9\-\_]+)*\@[a-z0-9\-\_]+\.[a-z\-\_.]*[a-z0-9\-\_]+$");
 	if (pattern.test(email.val()) == false) {
 		return false;
 	}

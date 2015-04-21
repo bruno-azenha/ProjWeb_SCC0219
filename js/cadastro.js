@@ -17,6 +17,7 @@ $("#datanasc").attr("max",maxDate);
 };
 
 $(document).ready(function(){
+	
 	$("#cpf").focusout(function(event){
 		var cpf = $("#cpf");
 		
@@ -24,8 +25,6 @@ $(document).ready(function(){
 			removeError(cpf);
 		else
 			displayError(cpf,"invalid CPF");
-
-
 	})
 
 	$("#name").focusout(function(event){
@@ -34,12 +33,11 @@ $(document).ready(function(){
 			removeError(name);
 		else
 			displayError(name,"name has to be at least 2 words long\n each word with 3 characters or more")
-
-
-
-
-
 	})
 
-
+	// Impede o usuário de colar no campo de confirmação de senha
+	$("#passConfirmation").bind('paste', function(e) {
+        e.preventDefault();
+		alert("Você não pode colar nesse campo.");
+	})
 })
