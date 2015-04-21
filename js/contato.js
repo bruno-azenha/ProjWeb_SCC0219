@@ -27,15 +27,14 @@ $(document).ready(function(){
 	$("#phone").focusout(function(event){
 		var p = $("#phone");
 		var phone= p.val();
-		var phoneflag = false;
-		
+			
 		if(p.val().length==0 || validatePhone(phone) ){
 			removeError(p);
-			phoneflag =true;
+			
 		}
 		else
 			displayError(p,"invalid phone");
-			phoneflag = false;
+			
 			
 
 	})
@@ -45,20 +44,27 @@ $(document).ready(function(){
 		n = $("#name");
 		e = $("#email");
 		p = $("#phone");
+		phoneFlag = false;
 	
 	var checked = $('input[type="checkbox"]').is(":checked");
+
+	if(p.val().length==0 || validatePhone(p.val()) ){
+			phoneFlag= true;
+			
+		}
 		
     if (!checked){
         event.preventDefault();
         displayError(c,"Please check at least one checkbox");
         
     }
-    else {
-    	removeError(c);
-  	}
-		
-	if(!validateName(n.val()) || !validaEmail(e.val())|| !phoneflag)
+    	
+	if(!validateName(n.val()) || !validaEmail(e)|| !phoneFlag)
 			event.preventDefault();
 	}
+	else {
+		
+    	removeError(c);
+  	}
 	)
 })

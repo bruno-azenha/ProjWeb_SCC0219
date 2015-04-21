@@ -13,19 +13,19 @@
 <body class = "cover">
 	<div>
 		
-		<form>
+		<form  action="" method="GET" id= "register" autocomplete = "off">
 			<h1>Cadastro </h1>
 			<div class = "field">
 			<label>Nome Completo: </label>
-			<input id = "name" type = "text" required/>
+			<input name = "name "id = "name" type = "text" required/>
 		</div>
 		<div class = "field">
 			<label>CPF: </label>
-			<input id = "cpf" type="text" maxlength = "11" placeholder = "only numbers" required/>
+			<input name = "cpf" id = "cpf" type="text" maxlength = "11" placeholder = "only numbers" required/>
 		</div>
 			<div class = "field">
 			<label>Data de Nascimento</label>
-			<input id = "datanasc" type = "date" min="1900-01-01" required />
+			<input name = "dob" id = "datanasc" type = "date" min="1900-01-01" required />
 			</div>
 			<div class = "field">
 			<label>Sexo: </label>
@@ -40,9 +40,9 @@
 			<input name= "estadoCivil" type = "radio" value = "Outros" required/>Outros
 			</div>
 		<div class = "field">
-			<label>Cidade: </label><input type = "text" required/>
+			<label>Cidade: </label><input name = "cidade" id = "cidade" type = "text" required/>
 			<label>Estado: </label>
-			<select id= "estado" >
+			<select name = "estado" id= "estado" >
 				<option>AC</option>			<option>AL</option>		<option>AP</option>			
 				<option>AM</option>			<option>BA</option>		<option>CE</option>
 				<option>DF</option>			<option>ES</option>		<option>GO</option>
@@ -56,19 +56,19 @@
 		</div>
 		<div class = "field">
 			<label>CEP: </label>
-			<input id = "cep" type = "text" maxlength = "8" placeholder="only numbers"/>
+			<input id = "cep" type = "text" maxlength = "8" placeholder="only numbers" required/>
 		</div>
 		<div class = "field">
 			<label>E-mail: </label>
-			<input type = "text"/>
+			<input type = "text" id = "email" required/>
 		</div>
 		<div class = "field">
 			<label>Senha: </label>
-			<input type = "password" id="senha"/>
+			<input type = "password" id="senha" required/>
 		</div>
 		<div class = "field">
 			<label>Confirmar a Senha: </label>			
-			<input type = "password" id="passConfirmation"/>
+			<input type = "password" id="passConfirmation" required/>
 		</div>
 			<input class = "button" type="submit" value ="Cadastrar"/>
 		</form>		

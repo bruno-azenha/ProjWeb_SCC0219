@@ -144,7 +144,18 @@ function displayError(id,msg){
 function removeError(id){
 	id.removeClass("error");
 	$("p").remove(".errorMsg");
+	
+
+}
+//applies the accept class of css.error
+function accept(id){
 	id.addClass("accept");
+
+}
+
+//verify if the inout password are equal.
+function validatePass(pass1,pass2){
+	return (pass1===pass2);
 
 }
 
@@ -152,7 +163,7 @@ function removeError(id){
 // acordo com as especificações do trabalho.
 function validatePhone(phone){ 
 	var pattern = new RegExp("^([(][0-9]{2}[)][0-9]{5}[-][0-9]{2}[-][0-9]{2})$");
-	alert(phone);
+	
 	if (pattern.test(phone) == false) {
 		return false;
 	}

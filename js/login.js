@@ -7,15 +7,22 @@ $(document).ready(function() {
 		}
 		else {
 			removeError(email);
+			
 		}
 	})
 
-	$("#submit").submit(function(event){
+	$("#login").submit(function(event){
 		var email = $("#email");
+		var pass = $("#password");
 		if (!validaEmail(email)) {
 			
 			event.preventDefault();
 		}
+		else
+			localStorage.setItem("email",email.val());
+			localStorage.setItem("password",pass.val());
+
+
 		
 	});		
 })

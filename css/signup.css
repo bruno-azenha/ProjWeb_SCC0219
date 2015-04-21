@@ -13,6 +13,7 @@ body, input, select, textarea, button {
     background-repeat: no-repeat;
     padding: 20px;
     background-size: cover;
+    background-attachment: fixed;
     min-width: 400px;
 
 }
