@@ -1,12 +1,62 @@
-// Função que verifica se um email é válido de 
-// acordo com as especificações do trabalho.
+// Verifica se um email é válido de acordo
+// com as especificações do trabalho.
 function validaEmail(email){ 
-	var pattern = new RegExp("^[a-z]([a-z0-9\-\_]*.?[a-z0-9\-\_]+)*\@[a-z0-9\-\_]+\.[a-z\-\_.]*[a-z0-9\-\_]+$");
+	var pattern = new RegExp("^[a-z]([a-z0-9\-\_]*\.?[a-z0-9\-\_]+)*\@[a-z0-9\-\_]+\.[a-z\-\_\.]*[a-z0-9\-\_]+$");
 	if (pattern.test(email.val()) == false) {
 		return false;
 	}
 	else 
 		return true;
+}
+
+// Verifica a qualidade da senha
+// Retorna uma string, podendo ser
+// 'pequena', 'fraca', 'media' ou 'forte'
+function verificaSenha(senha){
+	
+	var tipoSenha;
+	
+	// Verifica se eh pequena
+	var smallPattern = new RegExp("^.{0,5}$");
+	if (smallPattern.test(senha)){
+		return ("pequena");
+	}
+	
+	// Verifica se a senha eh fraca
+	var weakPattern = new RegExp("^(.{6}|[\w]+)$");
+	if (weakPattern.test(senha)){
+		return ("fraca");
+	}
+	
+	// Para verificar se eh media, precisa checar 
+	// se possui char especiais, letras e numeros
+	var temLetrasPattern = new RegExp("[a-zA-z]");
+	var temNumerosPattern = new RegExp("[0-9]");
+	var temSpecialPattern = new RegExp("[^a-zA-Z0-9]");
+	
+	if (temLetrasPattern.test(senha)){
+		if (temNumerosPattern.test(senha)){
+			if (temSpecialPattern.test(senha)){
+				tipoSenha = "media";
+			}
+		}
+	}
+	
+	// Para verificar se eh forte, precisa checar
+	// se possui letras maiusculas, minusculas eh
+	// pelo menos 2 special char diferentes.
+	var temMinusculasPattern = new RegExp("[a-z]");
+	var temMaiusculasPattern = new RegExp("[A-Z]");
+	var temDoisSpecialPattern = new RegExp("");
+	
+	if (tipoSenha == "media"){
+		var specChar = temSpecialPattern.exec(senha);
+		var temOutroSpecCharacterpattern = new RegExp("[^a-zA-Z0-9" + specChar + "]");
+		if (temOutroSpecCharacterpattern.test(senha)){
+			return "forte";
+		}
+	} 
+	return "media"
 }
 
 //simple method to check if date1 is greater than date2
