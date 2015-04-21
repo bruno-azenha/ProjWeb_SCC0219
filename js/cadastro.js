@@ -12,8 +12,6 @@ window.onload = function(){
 
 $("#datanasc").attr("max",maxDate);
 
-
-
 };
 
 $(document).ready(function(){
@@ -33,6 +31,12 @@ $(document).ready(function(){
 			removeError(name);
 		else
 			displayError(name,"name has to be at least 2 words long\n each word with 3 characters or more")
+	})
+	
+	$("#senha").change(function(event){
+		var senha = $("#senha").val();
+		var forca = verificaSenha(senha)
+		alert (forca);
 	})
 
 	// Impede o usuário de colar no campo de confirmação de senha
