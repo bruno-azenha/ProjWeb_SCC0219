@@ -10,11 +10,11 @@ $(document).ready(function() {
 		}
 	})
 
-	$("#submit").click(function(event){
+	$("#submit").submit(function(event){
 		var email = $("#email");
 		if (!validaEmail(email)) {
 			
-			return false;
+			event.preventDefault();
 		}
 		
 	});		

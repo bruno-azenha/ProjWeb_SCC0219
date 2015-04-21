@@ -24,7 +24,7 @@ $(document).ready(function(){
 
 	})
 
-	$("#submit").click(function(event){
+	$("#contato").submit(function(event){
 		c = $("#conheceu");
 		n = $("#name");
 		e = $("#email");
@@ -32,15 +32,17 @@ $(document).ready(function(){
 	var checked = $('input[type="checkbox"]').is(":checked");
 		
     if (!checked){
+        event.preventDefault();
         displayError(c,"Please check at least one checkbox");
-        return false;
+        
     }
     else {
     	removeError(c);
-    	if(!validateName(n.val()) || !validaEmail(e.val()))
-			return false;
+    	
 
 		}
+	if(!validateName(n.val()) || !validaEmail(e.val()))
+			event.preventDefault();
 	}
 	)
 })
