@@ -97,3 +97,15 @@ function removeError(id){
 	id.addClass("accept");
 
 }
+
+// Função que verifica se um telefone é válido de 
+// acordo com as especificações do trabalho.
+function validatePhone(phone){ 
+	var pattern = new RegExp("^([(][0-9]{2}[)][0-9]{5}[-][0-9]{2}[-][0-9]{2})$");
+	alert(phone);
+	if (pattern.test(phone) == false) {
+		return false;
+	}
+	else 
+		return true;
+}

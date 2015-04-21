@@ -24,10 +24,27 @@ $(document).ready(function(){
 
 	})
 
+	$("#phone").focusout(function(event){
+		var p = $("#phone");
+		var phone= p.val();
+		var phoneflag = false;
+		
+		if(p.val().length==0 || validatePhone(phone) ){
+			removeError(p);
+			phoneflag =true;
+		}
+		else
+			displayError(p,"invalid phone");
+			phoneflag = false;
+			
+
+	})
+
 	$("#contato").submit(function(event){
 		c = $("#conheceu");
 		n = $("#name");
 		e = $("#email");
+		p = $("#phone");
 	
 	var checked = $('input[type="checkbox"]').is(":checked");
 		
@@ -38,10 +55,9 @@ $(document).ready(function(){
     }
     else {
     	removeError(c);
-    	
-
-		}
-	if(!validateName(n.val()) || !validaEmail(e.val()))
+  	}
+		
+	if(!validateName(n.val()) || !validaEmail(e.val())|| !phoneflag)
 			event.preventDefault();
 	}
 	)
