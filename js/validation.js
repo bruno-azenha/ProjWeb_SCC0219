@@ -5,7 +5,8 @@ function validaEmail(email){
 	if (pattern.test(email.val()) == false) {
 		return false;
 	}
-	return true;
+	else 
+		return true;
 }
 
 //simple method to check if date1 is greater than date2
@@ -80,19 +81,19 @@ function validateCPF(cpf) {
 }
 
 //display error receives a reference and a string message
-//aplies the error class into the given id
+//applies the error class into the given id
 function displayError(id,msg){
 	$("p").remove(".errorMsg");
 	id.removeClass("accept");
-
-	id.parent().append("<p class = errorMsg>"+msg+"</p>");
 	id.addClass("error");
+	id.parent().append("<p class = errorMsg>"+msg+"</p>");
+	
 }
 
 //remove the error class above
 function removeError(id){
 	id.removeClass("error");
-	id.addClass("accept");
 	$("p").remove(".errorMsg");
+	id.addClass("accept");
 
 }

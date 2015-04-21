@@ -2,13 +2,17 @@ body, input, select, button {
     font-family: sans-serif;
     
 }
+
+body{
+    margin-top: 0;
+}
+
 .cover{
     background-image: url(../imgs/bridgeport.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
     background-size: cover;
-    padding: 20px;
     min-width: 400px;
     
 }
