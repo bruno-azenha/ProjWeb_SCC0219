@@ -159,3 +159,150 @@ function validatePhone(phone){
 	else 
 		return true;
 }
+
+//reference http://www.devmedia.com.br/dicas-validando-cep/833
+function validateCEP(cep){
+	var zip = cep.charAt(0)+cep.charAt(1)+cep.charAt(2);
+
+	if(zip<10){
+			
+		return false;
+
+	}
+	
+	if( (zip >=10) && (zip <=199)) {
+		$("#estado").val("SP");
+		return true;
+	}
+	
+	if( (zip >=200) && (zip <=289)) {
+		$("#estado").val("RJ");
+		return true;
+	}
+
+	if( (zip >=790) && (zip <=799)) {
+		$("#estado").val("MS");
+		return true;
+	}
+
+	if( (zip >=300) && (zip <=399)) {
+		$("#estado").val("MG");
+		return true;
+	}
+
+	if( (zip >=780) && (zip <=788)) {
+		$("#estado").val("MT");
+		return true;
+	}
+
+	if( (zip >=699) && (zip <=699)) {
+		$("#estado").val("AC");
+		return true;
+	}
+
+	if( (zip >=570) && (zip <=579)) {
+		$("#estado").val("AL");
+		return true;
+	}
+
+	if( (zip >=690) && (zip <=698)) {
+		$("#estado").val("AM");
+		return true;
+	}
+
+	if( (zip >=689) && (zip <=689)) {
+		$("#estado").val("AP");
+		return true;
+	}
+
+	if( (zip >=400) && (zip <=489)) {
+		$("#estado").val("BA");
+		return true;
+	}
+
+	if( (zip >=600) && (zip <=639)) {
+		$("#estado").val("CE");
+		return true;
+	}
+
+	if( (zip >=700) && (zip <=736)) {
+		$("#estado").val("DF");
+		return true;
+	}
+
+	if( (zip >=290) && (zip <=299)) {
+		$("#estado").val("ES");
+		return true;
+	}
+
+	if( (zip >=737) && (zip <=769)) {
+		$("#estado").val("GO");
+		return true;
+	}
+
+	if( (zip >=650) && (zip <=659)) {
+		$("#estado").val("MA");
+		return true;
+	}
+
+	if( (zip >=660) && (zip <=688)) {
+		$("#estado").val("PA");
+		return true;
+	}
+
+	if( (zip >=580) && (zip <=589)) {
+		$("#estado").val("PB");
+		return true;
+	}
+
+	if( (zip >=500) && (zip <=569)) {
+		$("#estado").val("PE");
+		return true;
+	}
+
+	if( (zip >=640) && (zip <=649)) {
+		$("#estado").val("PI");
+		return true;
+	}
+
+	if( (zip >=800) && (zip <=879)) {
+		$("#estado").val("PR");
+		return true;
+	}
+
+	if( (zip >=590) && (zip <=599)) {
+		$("#estado").val("RN");
+		return true;
+	}
+
+	if( (zip >=789) && (zip <=789)) {
+		$("#estado").val("RO");
+		return true;
+	}
+
+	if( (zip >=693) && (zip <=693)) {
+		$("#estado").val("RR");
+		return true;
+	}
+
+	if( (zip >=900) && (zip <=999)) {
+		$("#estado").val("RS");
+		return true;
+	}
+
+	if( (zip >=880) && (zip <=899)) {
+		$("#estado").val("SC");
+		return true;
+	}
+
+	if( (zip >=490) && (zip <=499)) {
+		$("#estado").val("SE");
+		return true;
+	}
+
+	if( (zip >=770) && (zip <=779)) {
+		$("#estado").val("TO");
+		return true;
+	}
+
+}

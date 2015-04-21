@@ -25,6 +25,23 @@ $(document).ready(function(){
 			displayError(cpf,"invalid CPF");
 	})
 
+	$("#cep").focusout(function(event){
+		var cep = $("#cep");
+		var mask = new RegExp("^[0-9]{8}$");
+		if(mask.test(cep.val())){
+			
+			if(validateCEP(cep.val()))
+				removeError(cep);
+			else
+				displayError(cep,"invalid CEP");
+
+		}
+
+		else
+			displayError(cep,"invalid CEP");
+	})
+
+
 	$("#name").focusout(function(event){
 		var name = $("#name");
 		if(validateFullName(name.val()))
@@ -32,6 +49,8 @@ $(document).ready(function(){
 		else
 			displayError(name,"name has to be at least 2 words long\n each word with 3 characters or more")
 	})
+
+	
 	
 	$("#senha").change(function(event){
 		var senha = $("#senha").val();
@@ -45,3 +64,6 @@ $(document).ready(function(){
 		alert("Você não pode colar nesse campo.");
 	})
 })
+
+
+
