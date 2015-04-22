@@ -24,25 +24,47 @@ $(document).ready(function(){
 
 	})
 
+	$("#phone").focusout(function(event){
+		var p = $("#phone");
+		var phone= p.val();
+			
+		if(p.val().length==0 || validatePhone(phone) ){
+			removeError(p);
+			
+		}
+		else
+			displayError(p,"invalid phone");
+			
+			
+
+	})
+
 	$("#contato").submit(function(event){
 		c = $("#conheceu");
 		n = $("#name");
 		e = $("#email");
+		p = $("#phone");
+		phoneFlag = false;
 	
 	var checked = $('input[type="checkbox"]').is(":checked");
+
+	if(p.val().length==0 || validatePhone(p.val()) ){
+			phoneFlag= true;
+			
+		}
 		
     if (!checked){
         event.preventDefault();
         displayError(c,"Please check at least one checkbox");
         
     }
-    else {
-    	removeError(c);
     	
-
-		}
-	if(!validateName(n.val()) || !validaEmail(e.val()))
+	if(!validateName(n.val()) || !validaEmail(e)|| !phoneFlag)
 			event.preventDefault();
 	}
+	else {
+		
+    	removeError(c);
+  	}
 	)
 })
