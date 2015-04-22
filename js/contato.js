@@ -44,6 +44,7 @@ $(document).ready(function(){
 		n = $("#name");
 		e = $("#email");
 		p = $("#phone");
+		m = $("#message");
 		phoneFlag = false;
 	
 	var checked = $('input[type="checkbox"]').is(":checked");
@@ -66,7 +67,21 @@ $(document).ready(function(){
 	else {
 		
     	removeError(c);
-	
+
+    	 var conheceu = new String();
+        $(':checkbox:checked').each(function(i){
+          conheceu += $(this).val()+';';
+          });
+        alert(conheceu);
+
+        localStorage.setItem("name",n.val());
+    	localStorage.setItem("email",e.val());
+    	localStorage.setItem("phone",p.val());
+    	localStorage.setItem("conheceu",conheceu);
+    	localStorage.setItem("message",m.val());
+
+
+    	
   	}
   	})
 })
