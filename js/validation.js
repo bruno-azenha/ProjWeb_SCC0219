@@ -19,11 +19,11 @@ function verificaSenha(senha){
 	// Verifica se eh pequena
 	var smallPattern = new RegExp("^.{0,5}$");
 	if (smallPattern.test(senha)){
-		return ("pequena");
+		return ("muito curta");
 	}
 	
 	// Verifica se a senha eh fraca
-	var weakPattern = new RegExp("^(.{6}|[\w]+)$");
+	var weakPattern = new RegExp("^(.{6}|[a-zA-Z0-9]+)$");
 	if (weakPattern.test(senha)){
 		return ("fraca");
 	}
@@ -47,13 +47,16 @@ function verificaSenha(senha){
 	// pelo menos 2 special char diferentes.
 	var temMinusculasPattern = new RegExp("[a-z]");
 	var temMaiusculasPattern = new RegExp("[A-Z]");
-	var temDoisSpecialPattern = new RegExp("");
 	
 	if (tipoSenha == "media"){
 		var specChar = temSpecialPattern.exec(senha);
 		var temOutroSpecCharacterpattern = new RegExp("[^a-zA-Z0-9" + specChar + "]");
 		if (temOutroSpecCharacterpattern.test(senha)){
-			return "forte";
+			if (temMaiusculasPattern.test(senha)){
+				if (temMinusculasPattern.test(senha)){
+					return "forte";
+				}
+			}
 		}
 	} 
 	return "media"
@@ -139,7 +142,6 @@ function displayError(id,msg){
 	id.parent().append("<p class = errorMsg>"+msg+"</p>");
 	
 }
-
 //remove the error class above
 function removeError(id){
 	id.removeClass("error");
@@ -151,6 +153,11 @@ function removeError(id){
 function accept(id){
 	id.addClass("accept");
 
+}
+
+// display the strength of the password
+function displayPasswordStrength(msg){
+	$("#forcaDaSenha").html(msg);
 }
 
 //verify if the inout password are equal.
@@ -176,13 +183,18 @@ function validateCEP(cep){
 	var zip = cep.charAt(0)+cep.charAt(1)+cep.charAt(2);
 
 	if(zip<10){
-			
-		return false;
 
+		return false;
 	}
 	
 	if( (zip >=10) && (zip <=199)) {
-		$("#estado").val("SP");
+		// $("#estado").val("SP");
+		alert("Entrou")
+		if ($("#estado").val() != "SP"){
+			displayError($("#cep"), "Esse CEP é de SP. Será que você errou?");
+			return false;
+			
+		}
 		return true;
 	}
 	
@@ -317,4 +329,3 @@ function validateCEP(cep){
 	}
 
 }
-

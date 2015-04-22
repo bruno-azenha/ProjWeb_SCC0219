@@ -32,8 +32,8 @@ $(document).ready(function(){
 			
 			if(validateCEP(cep.val()))
 				removeError(cep);
-			else
-				displayError(cep,"invalid CEP");
+			//else
+				//displayError(cep,"invalid CEP");
 
 		}
 
@@ -62,10 +62,10 @@ $(document).ready(function(){
 
 	
 	
-	$("#senha").change(function(event){
+	$("#senha").keyup(function(event){
 		var senha = $("#senha").val();
 		var forca = verificaSenha(senha)
-		alert (forca);
+		displayPasswordStrength(forca);
 	})
 
 	// Impede o usuário de colar no campo de confirmação de senha
