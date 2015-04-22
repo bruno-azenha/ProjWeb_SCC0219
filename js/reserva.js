@@ -12,6 +12,15 @@ $(document).ready(function() {
 
 		$("#oDate").attr("min", minOutDate);
 		$("#oDate").removeAttr("disabled");
+
+		$("#reservation").submit(function (){
+
+			localStorage.setItem("iDate",$("#iDate").val());
+			localStorage.setItem("oDate",$("#oDate").val());
+			localStorage.setItem("adults",$("#adult").val());
+			localStorage.setItem("baby",$("#baby").val());
+			localStorage.setItem("child",$("#child").val());
+		})
 	});
 });
 

@@ -39,7 +39,7 @@ $(document).ready(function(){
 
 	})
 
-	$("#contato").submit(function(event){
+	$("#contato").submit(function(event){ 	
 		c = $("#conheceu");
 		n = $("#name");
 		e = $("#email");
@@ -47,24 +47,26 @@ $(document).ready(function(){
 		phoneFlag = false;
 	
 	var checked = $('input[type="checkbox"]').is(":checked");
-
+	
 	if(p.val().length==0 || validatePhone(p.val()) ){
 			phoneFlag= true;
 			
 		}
 		
-    if (!checked){
-        event.preventDefault();
-        displayError(c,"Please check at least one checkbox");
+    
+    	
+	if(!validateName(n.val()) || !validaEmail(e)|| !phoneFlag || !checked){
+			event.preventDefault();
+			if (!checked){
+    	displayError(c,"Please check at least one checkbox");
         
     }
-    	
-	if(!validateName(n.val()) || !validaEmail(e)|| !phoneFlag)
-			event.preventDefault();
 	}
+
 	else {
 		
     	removeError(c);
+	
   	}
-	)
+  	})
 })

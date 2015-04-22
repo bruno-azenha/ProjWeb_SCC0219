@@ -78,5 +78,8 @@ textarea:focus, input:focus{
    background: #2390d9;
    color: #c7d5de;
    }
+  .button:focus{
+    background: #ff5a08;
+  }
  
     
