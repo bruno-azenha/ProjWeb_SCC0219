@@ -33,10 +33,10 @@ $(document).ready(function(){
 			displayError(name,"name has to be at least 2 words long\n each word with 3 characters or more")
 	})
 	
-	$("#senha").change(function(event){
+	$("#senha").keyup(function(event){
 		var senha = $("#senha").val();
 		var forca = verificaSenha(senha)
-		alert (forca);
+		displayPasswordStrength(forca);
 	})
 
 	// Impede o usuário de colar no campo de confirmação de senha

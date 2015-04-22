@@ -19,11 +19,11 @@ function verificaSenha(senha){
 	// Verifica se eh pequena
 	var smallPattern = new RegExp("^.{0,5}$");
 	if (smallPattern.test(senha)){
-		return ("pequena");
+		return ("muito curta");
 	}
 	
 	// Verifica se a senha eh fraca
-	var weakPattern = new RegExp("^(.{6}|[\w]+)$");
+	var weakPattern = new RegExp("^(.{6}|[a-zA-Z0-9]+)$");
 	if (weakPattern.test(senha)){
 		return ("fraca");
 	}
@@ -47,13 +47,16 @@ function verificaSenha(senha){
 	// pelo menos 2 special char diferentes.
 	var temMinusculasPattern = new RegExp("[a-z]");
 	var temMaiusculasPattern = new RegExp("[A-Z]");
-	var temDoisSpecialPattern = new RegExp("");
 	
 	if (tipoSenha == "media"){
 		var specChar = temSpecialPattern.exec(senha);
 		var temOutroSpecCharacterpattern = new RegExp("[^a-zA-Z0-9" + specChar + "]");
 		if (temOutroSpecCharacterpattern.test(senha)){
-			return "forte";
+			if (temMaiusculasPattern.test(senha)){
+				if (temMinusculasPattern.test(senha)){
+					return "forte";
+				}
+			}
 		}
 	} 
 	return "media"
@@ -139,11 +142,14 @@ function displayError(id,msg){
 	id.parent().append("<p class = errorMsg>"+msg+"</p>");
 	
 }
-
 //remove the error class above
 function removeError(id){
 	id.removeClass("error");
 	$("p").remove(".errorMsg");
 	id.addClass("accept");
 
+}
+
+function displayPasswordStrength(msg){
+	$("#forcaDaSenha").html(msg);
 }
