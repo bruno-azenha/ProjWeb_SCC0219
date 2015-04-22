@@ -88,18 +88,18 @@ $(document).ready(function(){
 
 	$("#register").submit(function(event){
 
-		var name = $("#name");
+		var fName = $("#name");
 		var cpf = $("#cpf");
 		var data = $("#datanasc");
 		var email = $("#email");
-		// var sexo = $("#sexo");
-		// var eCivil = $("#estadoCivil");
+		var sexo = $("[name='sexo']:checked");
+		 var eCivil = $("[name='estadoCivil']:checked");
 		var cidade = $("#cidade");
 		var estado = $("#estado");
 		var cep = $("#cep");
 		var senha = $("#senha");
 		var senhaC = $("#passConfirmation");
-		console.log(validateFullName(name.val()));
+		console.log(validateFullName(fName.val()));
 		console.log(validateCPF(cpf.val()));
 		console.log(validateCEP(cep.val()));
 		console.log(validaEmail(email));
@@ -108,17 +108,17 @@ $(document).ready(function(){
 		console.log(validatePass(senha.val(),senhaC.val()));
 		
 
-		if ((!validateFullName(name.val())) || (!validateCPF(cpf.val())) || (!validateCEP(cep.val()))
+		if ((!validateFullName(fName.val())) || (!validateCPF(cpf.val())) || (!validateCEP(cep.val()))
 		 	|| (!validaEmail(email)) ||(!validatePass(senha.val(),senhaC.val()))) {
 			event.preventDefault();
 		}
 		else {
 
-			localStorage.setItem("name",name.val());
+			localStorage.setItem("fName",fName.val());
 			localStorage.setItem("cpf",cpf.val());
-			localStorage.setItem("data",data.val());
-			// localStorage.setItem("sexo",sexo.val());
-			// localStorage.setItem("eCivil",eCivil.val());
+			localStorage.setItem("dOB",data.val());
+			localStorage.setItem("sexo",sexo.val());
+			localStorage.setItem("eCivil",eCivil.val());
 			localStorage.setItem("cidade",cidade.val());
 			localStorage.setItem("estado",estado.val());
 			localStorage.setItem("cep",cep.val());
