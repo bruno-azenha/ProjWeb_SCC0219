@@ -183,13 +183,18 @@ function validateCEP(cep){
 	var zip = cep.charAt(0)+cep.charAt(1)+cep.charAt(2);
 
 	if(zip<10){
-			
-		return false;
 
+		return false;
 	}
 	
 	if( (zip >=10) && (zip <=199)) {
-		$("#estado").val("SP");
+		// $("#estado").val("SP");
+		alert("Entrou")
+		if ($("#estado").val() != "SP"){
+			displayError($("#cep"), "Esse CEP é de SP. Será que você errou?");
+			return false;
+			
+		}
 		return true;
 	}
 	

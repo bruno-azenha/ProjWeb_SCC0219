@@ -32,8 +32,8 @@ $(document).ready(function(){
 			
 			if(validateCEP(cep.val()))
 				removeError(cep);
-			else
-				displayError(cep,"invalid CEP");
+			//else
+				//displayError(cep,"invalid CEP");
 
 		}
 
