@@ -3,9 +3,12 @@
 <head>
 	<meta charset = "UTF-8"/>
 	<link rel="stylesheet" type="text/css" href="css/reservas.css">
+	<link rel="stylesheet" type="text/css" href="css/error.css">
 	<script type="text/javascript" src="js/validation.js"></script>
 	<script type="text/javascript" src ="js/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src ="js/reserva.js"></script>
+	<script type="text/javascript" src ="js/jquery-ui/jquery-ui.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="js/jquery-ui/jquery-ui.min.css">
 	<title>Pagina de reservas</title>
 </head>
 
@@ -18,11 +21,11 @@
 			<h2>Faça sua reserva<h2>
 			<div class = "field">
 		<label>Data de chegada</label>
-		<input  name = "iDate" id= "iDate" type ="date" required  />
+		<input  name = "iDate" id= "iDate" readonly='true' required  />
 		</div>
 		<div class = "field">
 		<label>Data de saída</label>
-		<input name = "oDate" id= "oDate" type ="date" required />
+		<input name = "oDate" id= "oDate" readonly='true' required />
 		</div>
 		<div class = "field">
 		<label>Número de Adultos</label>

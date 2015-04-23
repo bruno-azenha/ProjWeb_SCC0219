@@ -15,6 +15,12 @@ $("#datanasc").attr("max",maxDate);
 };
 
 $(document).ready(function(){
+	$("#datanasc").datepicker({
+		minDate: new Date(1900, 0, 1),
+		maxDate: new Date(),
+		yearRange: '1900:',
+		dateFormat: 'dd/mm/yy'
+	});
 	
 	$("#cpf").focusout(function(event){
 		var cpf = $("#cpf");
