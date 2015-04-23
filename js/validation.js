@@ -189,7 +189,6 @@ function validateCEP(cep){
 	
 	if( (zip >=10) && (zip <=199)) {
 		// $("#estado").val("SP");
-		alert("Entrou")
 		if ($("#estado").val() != "SP"){
 			displayError($("#cep"), "Esse CEP é de SP. Será que você errou?");
 			return false;
