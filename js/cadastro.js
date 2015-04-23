@@ -53,7 +53,9 @@ $(document).ready(function(){
 
 
 	$("#name").focusout(function(event){
+		$("#name").val(toTitleCase($("#name").val()));
 		var name = $("#name");
+		
 		if(validateFullName(name.val()))
 			removeError(name);
 		else
