@@ -73,8 +73,15 @@ $(document).ready(function(){
 	
 	$("#senha").keyup(function(event){
 		var senha = $("#senha").val();
-		var forca = verificaSenha(senha)
-		displayPasswordStrength(forca);
+		var forca = verificaSenha(senha);
+		if (forca == -1){
+			displayError($("#senha"), "A senha deve ter entre 6 e 12 caracteres");
+		}
+		else {
+			displayPasswordStrength(forca);
+			removeError($("#senha"));
+		}
+		
 	})
 
 	// Impede o usuário de colar no campo de confirmação de senha
@@ -102,7 +109,7 @@ $(document).ready(function(){
 		var data = $("#datanasc");
 		var email = $("#email");
 		var sexo = $("[name='sexo']:checked");
-		 var eCivil = $("[name='estadoCivil']:checked");
+		var eCivil = $("[name='estadoCivil']:checked");
 		var cidade = $("#cidade");
 		var estado = $("#estado");
 		var cep = $("#cep");

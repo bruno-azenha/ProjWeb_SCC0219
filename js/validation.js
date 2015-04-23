@@ -16,10 +16,16 @@ function verificaSenha(senha){
 	
 	var tipoSenha;
 	
-	// Verifica se eh pequena
+	// Verifica se eh muito curta
 	var smallPattern = new RegExp("^.{0,5}$");
 	if (smallPattern.test(senha)){
-		return ("muito curta");
+		return (-1);
+	}
+	
+	// Verifica se eh muito grande
+	var largePattern = new RegExp("^.{13,}$");
+	if (largePattern.test(senha)){
+		return (-1);
 	}
 	
 	// Verifica se a senha eh fraca
@@ -162,7 +168,10 @@ function displayPasswordStrength(msg){
 
 //verify if the inout password are equal.
 function validatePass(pass1,pass2){
-	return (pass1===pass2);
+	if (pass1 != pass2 || verificaSenha(pass1) == -1){
+		return false;
+	}
+	return (true);
 
 }
 
