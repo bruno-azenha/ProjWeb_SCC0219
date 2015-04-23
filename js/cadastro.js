@@ -62,6 +62,13 @@ $(document).ready(function(){
 			displayError(name,"name has to be at least 2 words long\n each word with 3 characters or more")
 	})
 
+	$("#estado").change(function(event){
+		var cep = $("#cep").val()
+		if (cep != ""){
+			if (validateCEP(cep))
+				removeError($("#cep"));
+		}
+	})
 	
 	
 	$("#senha").keyup(function(event){
